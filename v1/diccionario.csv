@@ -1,0 +1,112 @@
+tabla,columna,tipo,disponible_en,descripcion
+operaciones,id_operacion,int64,decision,Identificador de la operación intentada
+operaciones,ts_utc,datetime64[ns],decision,"Instante de la operación, en UTC"
+operaciones,fecha_local,datetime64[ns],decision,Fecha en el huso del país del cliente: el día del caso
+operaciones,hora_local,int8,decision,Hora del día en el huso del país del cliente
+operaciones,pais_cliente,category,decision,País de residencia del cliente
+operaciones,id_cliente,int64,decision,Cliente que opera
+operaciones,id_tarjeta,Int64,decision,Tarjeta virtual; vacía en transferencias y retiros
+operaciones,id_dispositivo,Int64,decision,Dispositivo desde el que se opera; vacío en compra en línea sin autenticación reforzada
+operaciones,canal,category,decision,"compra_en_linea, pago_qr, transferencia o retiro_efectivo"
+operaciones,id_comercio,Int64,decision,Comercio; vacío en transferencias y retiros
+operaciones,rubro,category,decision,Rubro del comercio; vacío en transferencias y retiros
+operaciones,id_beneficiario,Int64,decision,Cuenta de destino de la transferencia
+operaciones,beneficiario_interno,boolean,decision,La cuenta de destino es de la billetera
+operaciones,pais_operacion,category,decision,País desde el que se opera
+operaciones,monto_usd,float64,decision,Monto en USD
+operaciones,autenticacion_reforzada,bool,decision,La operación pasó autenticación reforzada
+operaciones,decision_vigente,category,decision,"Decisión del sistema vigente: aprobada, retenida o declinada"
+operaciones,regla_vigente,category,decision,Regla del vigente que retuvo o declinó (V0–V3)
+operaciones,revisada_vigente,bool,posterior,Un analista revisó el caso
+operaciones,resultado_revision_vigente,category,etiqueta,Resultado de la revisión: fraude o legitima
+operaciones,estado_al_corte,category,posterior,"Estado de la operación al corte: normal, revertida o contracargada"
+operaciones,id_caso_fraude,Int64,etiqueta,Caso de fraude confirmado al que pertenece
+clientes,id_cliente,int64,decision,Identificador del cliente
+clientes,pais_cliente,category,decision,País de residencia
+clientes,fecha_alta,datetime64[ns],decision,Fecha de apertura de la cuenta
+clientes,segmento,category,decision,Producto contratado: basica o plus
+clientes,canal_alta,category,decision,"Canal de apertura: app, agente o referido"
+clientes,fecha_cierre,datetime64[ns],posterior,Fecha de cierre de la cuenta
+clientes,motivo_cierre,category,posterior,Motivo del cierre: mula o voluntario
+eventos_cuenta,id_cliente,int64,decision,Cliente
+eventos_cuenta,ts_utc,datetime64[ns],decision,"Instante del evento, en UTC"
+eventos_cuenta,tipo_evento,category,decision,"cambio_celular, cambio_clave o dispositivo_nuevo_enrolado"
+comercios,id_comercio,int64,decision,Identificador del comercio
+comercios,rubro,category,decision,Rubro
+comercios,pais_comercio,category,decision,País del comercio
+comercios,fecha_alta,datetime64[ns],decision,Fecha de afiliación
+reclamos,id_reclamo,int64,etiqueta,Identificador del reclamo
+reclamos,id_operacion,int64,etiqueta,Operación reclamada
+reclamos,fecha_reclamo,datetime64[ns],etiqueta,Fecha del reclamo
+reclamos,tipo,category,etiqueta,no_reconocida o disputa_comercial
+reclamos,estado,category,etiqueta,"confirmado, rechazado o en_investigacion al corte"
+reclamos,fecha_resolucion,datetime64[ns],etiqueta,Fecha de resolución; vacía si sigue en investigación
+reclamos,id_caso_fraude,Int64,etiqueta,"Caso de fraude, en lo confirmado"
+reclamos,tipologia_investigada,category,etiqueta,"Tipología que registra el investigador, en lo confirmado"
+auditoria,id_operacion,int64,etiqueta,Operación aprobada revisada a posteriori
+auditoria,resultado,category,etiqueta,fraude o legitima
+particion,id_operacion,int64,decision,Operación
+particion,particion,category,decision,"Por el mes de ts_utc: rodaje, entrenamiento, validacion, oot o monitoreo"
+particion,madura,bool,etiqueta,Pasaron al menos 90 días entre la operación y el corte 1
+particion,etiqueta_disponible,bool,etiqueta,Madura y no declinada
+particion,fraude_w60,Int8,etiqueta,"1 si hay reclamo no_reconocida en 60 días confirmado al corte 1, o si el analista confirmó fraude al revisarla; vacío si se declinó"
+particion,fraude_temprano,int8,etiqueta,"1 si hay reclamo no_reconocida en 30 días, confirmado o en investigación al corte 1"
+senales,id_operacion,int64,decision,Operación
+senales,n_1h_tarjeta,float64,decision,Operaciones de la tarjeta en la hora previa
+senales,monto_1h_tarjeta,float64,decision,USD de la tarjeta en la hora previa
+senales,n_24h_tarjeta,float64,decision,Operaciones de la tarjeta en las 24 h previas
+senales,monto_24h_tarjeta,float64,decision,USD de la tarjeta en las 24 h previas
+senales,comercios_24h_tarjeta,float64,decision,Comercios distintos de la tarjeta en las 24 h previas
+senales,n_1h_cliente,float64,decision,Operaciones del cliente en la hora previa
+senales,n_24h_cliente,float64,decision,Operaciones del cliente en las 24 h previas
+senales,monto_24h_cliente,float64,decision,USD del cliente en las 24 h previas
+senales,desvio_monto,float64,decision,Monto ÷ media de los montos anteriores del cliente; 1.0 con menos de 3 previas
+senales,sin_historia,float64,decision,1 si el cliente tiene menos de 3 operaciones previas
+senales,dispositivo_nuevo,int8,decision,1 si el cliente usa ese dispositivo por primera vez
+senales,pais_nuevo,int8,decision,"1 si el cliente opera por primera vez desde ese país, distinto del de residencia"
+senales,beneficiario_nuevo,int8,decision,1 si el cliente transfiere por primera vez a esa cuenta
+senales,antiguedad_cuenta_dias,float64,decision,Días desde el alta del cliente
+senales,cuentas_por_dispositivo_30d,float64,decision,Cuentas distintas en el dispositivo en los 30 días previos; 0 sin dispositivo
+senales,evento_24h,float64,decision,1 si hubo un evento de cuenta en las 24 h previas
+senales,riesgo_comercio,float64,decision,"Reclamos no_reconocida del comercio hasta 60 días antes ÷ sus operaciones hasta esa fecha (mínimo 30; si no, la tasa global); 0 sin comercio"
+senales,n_dia_tarjeta_total,float64,posterior,Operaciones de la tarjeta en su día local completo (solo en B)
+senales,riesgo_comercio_sin_rezago,float64,etiqueta,"Reclamos no_reconocida del comercio al corte 1 ÷ sus operaciones del año (mínimo 30; si no, la tasa global); 0 sin comercio (solo en B)"
+score_sup,id_operacion,int64,decision,Operación
+score_sup,score_hgb,float64,decision,"Score del HGB ponderado, entrenado en M02–M06"
+score_sup,p_hgb,float64,decision,"Probabilidad del HGB, corregida por la ponderación y ajustada en validación"
+score_sup,p_logistica,float64,decision,"Probabilidad de la regresión logística, entrenada en M02–M06"
+score_sup,score_aleatoria,float64,posterior,Score de un HGB entrenado con un 70 % al azar de lo etiquetado de M02–M08: en su 30 % de prueba y en la OOT (M09–M10); vacío en el resto
+score_anom,id_operacion,int64,decision,Operación
+score_anom,score_if,float64,decision,Score de anomalía del Isolation Forest ajustado en M02–M06 (mayor = más anómalo)
+red,id_cliente,int64,decision,Cliente
+red,id_componente,int64,posterior,Componente del grafo cliente–dispositivo del año
+red,tamano_componente,int64,posterior,Clientes del componente
+red,cuentas_por_dispositivo,int64,posterior,Cuentas del dispositivo más compartido del cliente en el año
+red,recibido_usd,float64,posterior,USD recibidos por transferencias internas en el año
+red,pasado_usd,float64,posterior,"USD que salieron (transferencia o retiro) en las 24 h siguientes a cada entrada, hasta lo recibido"
+red,razon_paso_24h,float64,posterior,pasado_usd ÷ recibido_usd; vacío si no recibió
+cola,id_operacion,int64,decision,Operación retenida por la política del curso
+cola,id_caso,int64,decision,"Caso cliente-día, uno por partición"
+cola,franja,category,decision,modelo (por pérdida esperada) o exploracion (por score de anomalía)
+cola,prioridad,float64,posterior,"Prioridad del caso: suma de la pérdida esperada del cliente-día; en exploracion, el mayor score_if"
+cola,revisada,bool,posterior,El caso entró en los K revisados de su día
+cola,valor,float64,decision,"Monto × fracción absorbida de la operación, en USD"
+razones,id_caso,int64,posterior,Caso revisado de M07–M12 (id_caso de cola): la fila solo existe si el caso se revisó
+razones,id_operacion,int64,posterior,La operación del caso con mayor p_hgb
+razones,franja,category,posterior,Franja del caso
+razones,regla_rafaga,bool,posterior,Dispara la regla de ráfaga del curso
+razones,regla_toma_cuenta,bool,posterior,Dispara la regla de toma de cuenta del curso
+razones,regla_desvio,bool,posterior,Dispara la regla de desvío del curso
+razones,razon1,category,posterior,Grupo de señales de la razón 1 (de mayor a menor Δ); vacío si no hay
+razones,delta1,float64,posterior,Caída del logit al llevar ese grupo a su valor típico (razón 1)
+razones,texto1,string,posterior,La razón 1 en palabras
+razones,razon2,category,posterior,Grupo de señales de la razón 2 (de mayor a menor Δ); vacío si no hay
+razones,delta2,float64,posterior,Caída del logit al llevar ese grupo a su valor típico (razón 2)
+razones,texto2,string,posterior,La razón 2 en palabras
+razones,razon3,category,posterior,Grupo de señales de la razón 3 (de mayor a menor Δ); vacío si no hay
+razones,delta3,float64,posterior,Caída del logit al llevar ese grupo a su valor típico (razón 3)
+razones,texto3,string,posterior,La razón 3 en palabras
+importancias,senal,category,etiqueta,Señal del modelo
+importancias,grupo,category,etiqueta,Grupo de la señal
+importancias,media,float64,etiqueta,Caída media del AP en la OOT al permutar la señal (5 repeticiones)
+importancias,desvio,float64,etiqueta,Desvío de esa caída

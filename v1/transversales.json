@@ -1,0 +1,104 @@
+{
+ "nota": "Cifras transversales del curso: las cita cada clase y las afirma qa_coherencia.py.",
+ "cartera": "a",
+ "K": 15,
+ "sla_horas": 4,
+ "tasa_base_m02_m10": {
+  "conteo": 0.00521551904343827,
+  "monto": 0.020456436096992745,
+  "n": 287028,
+  "positivos": 1497
+ },
+ "umbral_perdida_esperada_usd": 1.3288426137189513,
+ "volumen_optimo_casos_por_dia": 31.73015873015873,
+ "umbrales_reglas": {
+  "rafaga_n_1h": 2,
+  "desvio_p99_pais": {
+   "CL": 33.044081160169995,
+   "CO": 35.72377540704286,
+   "EC": 30.29354344268132,
+   "MX": 37.82068748875498,
+   "PE": 36.678315233884625
+  }
+ },
+ "kpi_oot": {
+  "vigente": {
+   "casos_revisados": 918,
+   "fraude_detectado": 63,
+   "fp": 855,
+   "fp_por_fraude": 13.571428571428571,
+   "precision": 0.06862745098039216,
+   "usd_evitados": 7410.6965,
+   "dias": 62
+  },
+  "curso": {
+   "casos_revisados": 926,
+   "fraude_detectado": 162,
+   "fp": 764,
+   "fp_por_fraude": 4.716049382716049,
+   "precision": 0.17494600431965443,
+   "usd_evitados": 27380.633,
+   "dias": 62
+  }
+ },
+ "testigos": {
+  "T1": {
+   "id_tarjeta": 517796,
+   "id_cliente": 117979,
+   "id_episodio": 17,
+   "operaciones": [
+    266269,
+    266271,
+    266272,
+    266273,
+    266274,
+    266275,
+    266277,
+    266278,
+    266280,
+    266281,
+    266282,
+    266283,
+    270906
+   ],
+   "microcompras": 12,
+   "micro_aprobadas_sin_reclamo": 3,
+   "declinadas": 9,
+   "id_operacion_grande": 270906,
+   "monto_grande_usd": 539.15
+  },
+  "T2": {
+   "id_cliente": 109053,
+   "id_episodio": 852,
+   "operaciones": [
+    268716,
+    269779
+   ],
+   "id_operacion": 269779,
+   "desvio_t2": 5.084007029876978,
+   "monto_usd": 433.92,
+   "dias_al_reclamo": 13.78304471780221
+  },
+  "T3": {
+   "id_componente": 800,
+   "clientes": [
+    100853,
+    101256,
+    109322,
+    109372,
+    111400,
+    117573,
+    123755,
+    124074
+   ],
+   "cuentas": 8,
+   "dispositivos": 3,
+   "en_franja_alfa": [
+    100853,
+    111400
+   ],
+   "razon_paso_24h": 0.9600148989662378,
+   "motivo_cierre": "mula"
+  }
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "nota": "Valores ilustrativos del caso. No describen la norma de ningún país.",
+ "cartera": "b",
+ "periodo": {
+  "inicio": "2025-01-01",
+  "fin": "2025-12-31"
+ },
+ "cortes": {
+  "corte1": "2026-01-31",
+  "corte2": "2026-04-30"
+ },
+ "particion": {
+  "rodaje": [
+   1
+  ],
+  "entrenamiento": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "validacion": [
+   7,
+   8
+  ],
+  "oot": [
+   9,
+   10
+  ],
+  "monitoreo": [
+   11,
+   12
+  ]
+ },
+ "K": 24,
+ "K_vigente": 24,
+ "sla_horas": 4,
+ "costos_usd": {
+  "revision_usd": 2.0,
+  "friccion_usd": 0.7,
+  "gestion_reclamo_usd": 15.0
+ },
+ "fraccion_absorbida": {
+  "compra_en_linea": {
+   "sin_ar": 0.05,
+   "con_ar": 1.0
+  },
+  "pago_qr": 1.0,
+  "transferencia": 0.8,
+  "retiro_efectivo": 1.0
+ },
+ "autenticacion_reforzada": {
+  "umbral_usd": 50.0,
+  "p_bajo_umbral": 0.3,
+  "exencion_sobre_umbral": 0.05
+ },
+ "reglas_vigente": {
+  "V0": "declina la 4.ª compra en línea de la misma tarjeta en 10 minutos",
+  "V1": "retiene transferencia a beneficiario nuevo con monto ≥ USD 500",
+  "V2": "retiene país de operación nuevo y dispositivo nuevo",
+  "V3": "retiene monto ≥ 10 veces la media previa del cliente (con ≥ 3 operaciones previas)",
+  "parametros": {
+   "V0": {
+    "n": 4,
+    "minutos": 10
+   },
+   "V1": {
+    "umbral_usd": 500.0
+   },
+   "V3": {
+    "multiplo": 10.0,
+    "min_previas": 3
+   }
+  }
+ },
+ "escenarios": {
+  "protector": {
+   "plazo_reclamo_dias": 120,
+   "fraccion_transferencia": 1.0,
+   "umbral_ar_usd": 30.0
+  },
+  "base": {
+   "plazo_reclamo_dias": 120,
+   "fraccion_transferencia": 0.8,
+   "umbral_ar_usd": 50.0
+  },
+  "estricto": {
+   "plazo_reclamo_dias": 60,
+   "fraccion_transferencia": 0.25,
+   "umbral_ar_usd": 100.0
+  }
+ },
+ "alfa_exploracion": 0.15,
+ "tasa_referencia_real": {
+  "por_volumen": 0.00015,
+  "por_valor": 0.00033,
+  "alcance": "operaciones con tarjeta emitida en la UE/EEE, 2024",
+  "fuente": "EBA–ECB, 2025 Report on Payment Fraud (EBA/REP/2025/40), diciembre de 2025, p. 12 (volumen) y p. 10 (valor)",
+  "url": "https://www.ecb.europa.eu/press/intro/publications/pdf/ecb.ebaecb202512.en.pdf",
+  "verificada": "2026-10-05"
+ }
+}

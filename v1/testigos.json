@@ -1,0 +1,60 @@
+{
+ "T1": {
+  "id_tarjeta": 517796,
+  "id_cliente": 117979,
+  "id_episodio": 17,
+  "operaciones": [
+   266269,
+   266271,
+   266272,
+   266273,
+   266274,
+   266275,
+   266277,
+   266278,
+   266280,
+   266281,
+   266282,
+   266283,
+   270906
+  ],
+  "microcompras": 12,
+  "micro_aprobadas_sin_reclamo": 3,
+  "declinadas": 9,
+  "id_operacion_grande": 270906,
+  "monto_grande_usd": 539.15
+ },
+ "T2": {
+  "id_cliente": 109053,
+  "id_episodio": 852,
+  "operaciones": [
+   268716,
+   269779
+  ],
+  "id_operacion": 269779,
+  "desvio_t2": 5.084007029876978,
+  "monto_usd": 433.92,
+  "dias_al_reclamo": 13.78304471780221
+ },
+ "T3": {
+  "id_componente": 800,
+  "clientes": [
+   100853,
+   101256,
+   109322,
+   109372,
+   111400,
+   117573,
+   123755,
+   124074
+  ],
+  "cuentas": 8,
+  "dispositivos": 3,
+  "en_franja_alfa": [
+   100853,
+   111400
+  ],
+  "razon_paso_24h": 0.9600148989662378,
+  "motivo_cierre": "mula"
+ }
+}

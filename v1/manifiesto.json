@@ -1,0 +1,134 @@
+{
+ "a_auditoria.parquet": {
+  "sha256": "77ac75c7f4adb8b788e7f227a7607c802c0beb4f1c09a8ad7b3c40baaa98b7a7",
+  "bytes": 54284
+ },
+ "a_clientes.parquet": {
+  "sha256": "055771753a786eb78fc342a0dd32615c6da9af8a6fd08b42518bdf551c0bc95b",
+  "bytes": 232356
+ },
+ "a_cola.parquet": {
+  "sha256": "bde92102193ea15d37021b6ca9710fc8d515b2ab136a01803149141ab819c67a",
+  "bytes": 352436
+ },
+ "a_comercios.parquet": {
+  "sha256": "dfaff283c589ba7067a824a2c2e87e271d36c4bc50dcb924778bd244ff67bcd6",
+  "bytes": 62318
+ },
+ "a_eventos_cuenta.parquet": {
+  "sha256": "9f17fc6b5cf5361c7d4c9d5a6aaf8d407476c9e919a2490352cd7548cdbf1d3d",
+  "bytes": 231129
+ },
+ "a_importancias.parquet": {
+  "sha256": "254ff0f457e3ffcb96278319d35a9188b18b644a9402e237bc47ab00f989496c",
+  "bytes": 3675
+ },
+ "a_operaciones.parquet": {
+  "sha256": "df5f82146dafef4f3332f856535fe09867ba9e70aae97df19470c4e27c4d0d58",
+  "bytes": 10759377
+ },
+ "a_parametros_caso.json": {
+  "sha256": "25071a0b1b9ac2e132449009b3805ea02360c7334fb6fca564e10d498b9a3316",
+  "bytes": 2124
+ },
+ "a_particion.parquet": {
+  "sha256": "76827b7b41d6cf0e7108ce752185fd11803e75edc9b1b5137daecf15bd79b7b9",
+  "bytes": 1902433
+ },
+ "a_razones.parquet": {
+  "sha256": "14c5114e94480d2470909b5b946e75b4fcabff258d5c802bd17c23a376dba187",
+  "bytes": 139751
+ },
+ "a_reclamos.parquet": {
+  "sha256": "5526bb317bc8efd0a557a38cf0b329f1fc019315a0ad4304e52274f8f9992672",
+  "bytes": 52017
+ },
+ "a_red.parquet": {
+  "sha256": "5978071656c689fa9756d608aa263f2256424a7eb3f82e53f7a8cd50ed93bb58",
+  "bytes": 438599
+ },
+ "a_score_anom.parquet": {
+  "sha256": "cfecbd0e2570eb0bcb10091ed8744802d2611e91787024e2c0b4eb092291f710",
+  "bytes": 3539180
+ },
+ "a_score_sup.parquet": {
+  "sha256": "55e6d878f0c342b26bd899768ab31b9b802f208e98e39230aa22cb609dd0dcf4",
+  "bytes": 8906204
+ },
+ "a_senales.parquet": {
+  "sha256": "3c7ec8d7904fbd1a4da45ba3f5de8e4dcc7f93c822ff67299551b78ab45c4e93",
+  "bytes": 8253744
+ },
+ "b_auditoria.parquet": {
+  "sha256": "d24fb97794ff85a7d7070f69af25f40e5942d396eba7bdb149d3f8dde4874129",
+  "bytes": 85217
+ },
+ "b_clientes.parquet": {
+  "sha256": "243df36a2f473a7254c14d5000e15fae2d2ee8d33efa12288466d4c735be47c1",
+  "bytes": 360384
+ },
+ "b_cola.parquet": {
+  "sha256": "2b75889d9cf23440893d3a182d111f2829c938f79f360a0c08bc14c3ba37c7b7",
+  "bytes": 354650
+ },
+ "b_comercios.parquet": {
+  "sha256": "9d12652c2abd8419471e7414c3cb4053be2da0b6a89f89c64f8ab94b5d9fac61",
+  "bytes": 89275
+ },
+ "b_eventos_cuenta.parquet": {
+  "sha256": "6684da5455286bef5462927633f4a424702b98bd1738efbf50e342e7cc3c471e",
+  "bytes": 374551
+ },
+ "b_importancias.parquet": {
+  "sha256": "1fec87692705860b84b4b4287f46fc38c852f270f376d2946be1927742dbfe1a",
+  "bytes": 3675
+ },
+ "b_operaciones.parquet": {
+  "sha256": "25032ccc013d1b00dee9ddefbcc9f1a1539b659b0dc4a0ac6a934e3e829b5a4e",
+  "bytes": 17037509
+ },
+ "b_parametros_caso.json": {
+  "sha256": "bfb7e43b8c69305b72d95c30fdb6cf891af9749342f912e8b246ed32c5343c7f",
+  "bytes": 2124
+ },
+ "b_particion.parquet": {
+  "sha256": "91ca3504a151c1ca8fbdcd4a02c804db5efb20f49b0c9fce11a39035907cd0cd",
+  "bytes": 2880021
+ },
+ "b_razones.parquet": {
+  "sha256": "5b475246579d1afbf8a7539dcb9d2b8bb578d4cb7e6f69914d7098132d2c5fd1",
+  "bytes": 220032
+ },
+ "b_reclamos.parquet": {
+  "sha256": "fcb544d6afd4ebc01a7b428883d50670c2cb1a491b698868d0541b72613e6679",
+  "bytes": 78225
+ },
+ "b_red.parquet": {
+  "sha256": "961358d490cab88864e646616681f01e3a0ad38a98b521f537fd3c16ed26ce6c",
+  "bytes": 694844
+ },
+ "b_score_anom.parquet": {
+  "sha256": "1786917b91cbf286105053aff546a462e0577f1041eaa1e0f39033f9878e3e8f",
+  "bytes": 5854715
+ },
+ "b_score_sup.parquet": {
+  "sha256": "7c57a502cde87615e34a5b1afed5fd93dc01e4213b674be6cb92161dcd7a58d1",
+  "bytes": 13465131
+ },
+ "b_senales.parquet": {
+  "sha256": "3e846ed68cb0f8477d008b80490231ff2aa6d03b8b88203072169de1bfb5fa15",
+  "bytes": 13808320
+ },
+ "diccionario.csv": {
+  "sha256": "e7582ddda00e3f01370c6c372aaa7fa16381a754589759d0080577e9934b0510",
+  "bytes": 9757
+ },
+ "testigos.json": {
+  "sha256": "4687291f02b3161a809c323db391c6edc696896ac0ff766c7be73b24794d13be",
+  "bytes": 912
+ },
+ "transversales.json": {
+  "sha256": "81846eb068609ca12b716ed354e5416e875fb8aa6cad34c1c3cff1d85128abf4",
+  "bytes": 2007
+ }
+}
