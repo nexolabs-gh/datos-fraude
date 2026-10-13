@@ -17,6 +17,7 @@ Si GitHub no responde, el espejo es `https://cdn.jsdelivr.net/gh/nexolabs-gh/dat
 
 - **`v1/` es inmutable:** ningún archivo cambia; solo se agregan archivos nuevos, y cada agregado se avisa.
 - **`v1/manifiesto.json`** trae el sha256 y el tamaño de cada archivo, para comprobar que lees los mismos bytes.
+- **`v1/manifiesto_corte2.json`** hace lo mismo con los dos archivos del corte 2, que se agregaron después; `manifiesto.json` no cambió.
 
 ## Dos carteras
 
@@ -34,6 +35,7 @@ Cada operación pasa por el sistema vigente, que la aprueba, la retiene para rev
 - **Operaciones:** del 2025-01-01 al 2025-12-31, según `ts_utc` (en UTC y sin huso).
 - **`fecha_local` y `hora_local`:** en el huso del país del cliente. El día de un caso es su `fecha_local`.
 - **Corte 1, 2026-01-31:** es el «hoy» del curso. Los reclamos y las columnas que dependen de ellos están como se conocían ese día.
+- **Corte 2, 2026-04-30:** los reclamos tres meses después, con los que llegaron y se resolvieron entre los dos cortes (`reclamos_corte2`). Los usan la última clase y la entrega final; hasta entonces, el curso trabaja al corte 1, como en producción el día de decidir.
 - **Partición** (por el mes de `ts_utc`): M01 rodaje · M02–M06 entrenamiento · M07–M08 validación · M09–M10 OOT · M11–M12 monitoreo.
 
 ## Tablas
@@ -45,6 +47,7 @@ Cada operación pasa por el sistema vigente, que la aprueba, la retiene para rev
 | `eventos_cuenta` | evento de cuenta: cambio de celular, cambio de clave o dispositivo nuevo | — |
 | `comercios` | comercio | `id_comercio` |
 | `reclamos` | reclamo, al corte 1 | `id_reclamo` |
+| `reclamos_corte2` | reclamo, al corte 2 | `id_reclamo` |
 | `auditoria` | operación aprobada que se revisó a posteriori: una muestra al azar | `id_operacion` |
 | `parametros_caso.json` | — | K, capacidad, costos, fracciones, reglas del vigente y escenarios |
 

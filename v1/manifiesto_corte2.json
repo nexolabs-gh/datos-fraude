@@ -1,0 +1,10 @@
+{
+ "a_reclamos_corte2.parquet": {
+  "sha256": "c938ca3035cef4133d84f55baad35d5b45334a91a41e93f985f735094a34c981",
+  "bytes": 54783
+ },
+ "b_reclamos_corte2.parquet": {
+  "sha256": "2076f22f45a630cc1362b130e0e1c5d969f73d5ebfd604c3ff80b84810e06ffc",
+  "bytes": 81500
+ }
+}
